@@ -24,8 +24,8 @@ $(document).ready(function(){
 
 $(".submit").click(function(event){
     event.preventDefault()
-    if ($("#name").val() == "" || $("#area").val() == "") {
-        alert("please input your name and area of residence before clicking submit!")
+    if ($("#name").val() == "" || $("#area").val() == "" || $("#extras").val() == "") {
+        alert("please input your name, area of residence, and extra thoughts before clicking submit!")
     } else {
         // CREATING AND SPLITTING NAMES
 //        nameArray = $("#name").val().split(" ")
@@ -33,6 +33,7 @@ $(".submit").click(function(event){
 //        lastName = nameArray[1]
         name = $("#name").val()
         area = $("#area").val()
+        extras = $("#extras").val()
         
         // REMOVALS ARRAY
         var removals = [
@@ -53,6 +54,15 @@ $(".submit").click(function(event){
                 body: `Hello,\n\nMy name is ${name}. I live in ${area} and I am emailing today to appeal to you to use your influence in persuading Jerry Falwell Jr. to step down as Liberty University's president. Over the years, Jerry Falwell Jr. has ridiculed staff, called a student "physically retarded", made remarks about shooting Muslims, and delayed necessary action concerning COVID-19. The latest misuse of his position came in the form of a tweet: a previously circulated image of Governor Ralph Northam and a friend in blackface and a KKK hood. Jerry Falwell’s choice to bring the photo back into public view following the killings of George Floyd, Ahmaud Arbery, Tony McDade, and Breonna Taylor was tactless, incendiary, and unequivocally racist. This thoughtless lack of concern for Liberty’s African American students and alumni clearly demonstrates that Falwell Jr. should not be leading one of the largest Christian universities in the world. I urge you to reflect on the pain of Liberty's students and alumni and to make a motion toward the resignation of Jerry Falwell Jr. Under his leadership, I cannot in good conscience recommend Liberty as a Christian university.\n"If your brother sins against you, go and tell him his fault, between you and him alone. If he listens to you, you have gained your brother" (Matt. 18:15)\n\nSincerely,\n${name}`,
                 to: "pastormac@cebclive.org",
                 cc: "bautry@sbcv.org,crhody@imagechurch.com,david.rhodenhizer@crbc.org,dcrain@sbcv.org,gene.mims@judsonbaptist.com,whr@rawlingscompany.com,harold.rawlings@fuse.net,ike.reighard@piedmontchurch.tv,jonathan@trbc.org,ssnyder@davissnyder.com,tim@timlee.org",
+            },
+            {
+                name: "Removal of Christopher Columbus Monument",
+                dateAdded: "Added 06/25/20",
+                desc: "Citizens of Columbus are calling for the removal of Christopher Columbus Monument at Columbus City Hall.",
+                subject: "Removal of Christopher Columbus Monument",
+                body: `Dear Mayor Ginther and members of Columbus City Council,\n\nHello,\n\nMy name is ${name} and I am a resident of ${area}. I am writing today to demand the removal of the Christopher Columbus Monument that is located in front of the Columbus City Hall.\n\nChristopher Columbus is not a man who deserves to be displayed proudly in any city. His most famous achievement, the “discovery” of the Americas, was a lie. Before Columbus’ arrival to the New World, Native Americans had been living there for centuries. Columbus was known to be a racist. He called the indigenous people “Indians,” and treated them as less than humans, enslaving and murdering them. Furthermore, he gave Native American adults and children alike to his men to rape, at one point noting that 9- and 10-year-old girls were “in demand.” During the 11 years that Columbus was in the New World, the amount of indigenous people in the area where he landed dropped from 8 million to 100,000. Not to mention, he and his men brought diseases like smallpox to the New World, which also killed a significant number of the indigenous population. His crimes were so heinous for even his times that he was eventually brought back to Spain in chains and subsequently arrested. In the 11 years that Christopher Columbus was on American soil, he inflicted a reign of terror on the indigenous population.\n\nThis is the man that you choose to continue to honor by keeping his monument at our city hall - the very place of representation of our city. He is the absolute image of colonialism, racism, white supremacy, enslavement, and the genocide of the Native Americans. By keeping the monument in its place, you are not only condoning his crimes but also sending a message to your own citizens and to the world that that is the value that our city and government stand for.\n\nWe cannot change the past. However, we can change the future. Cities all across the country have already decided to take action after the truth was finally brought up to light. Hartford, New Haven, Middletown, and Detroit have already removed their statues of Christopher Columbus. Additionally, cities such as Chicago, Boston, and Philadelphia are considering the removal of the statues and are actively working with community members to reach a solution. Just today, Columbus State Community College announced their decision to remove the Christopher Columbus statue located on their campus.\n\nI believe that this is a unique opportunity and duty for the Mayor and City Council of our city to address systemic racism here. Our community members have consistently and patiently asked for the removal of the memorial. Now is the time. I  demand that the Christopher Columbus Monument be removed from the Columbus City Hall.\n\nSincerely,\n${name}`,
+                to: "zgdavidson@columbus.gov,LMCapobianco@columbus.gov,kaellingsen@columbus.gov,jwcarmean@columbus.gov,DFriendFoster@columbus.gov,GMAmes@columbus.gov,KBMccain@columbus.gov,HNMiller@columbus.gov,tyharden@columbus.gov,cenewman@columbus.gov,jdcarter@columbus.gov,LJFrank@columbus.gov,NNHarper@columbus.gov,cgwilliams@columbus.gov",
+                cc: "311@columbus.gov",
             },
 
         ]
@@ -129,6 +139,24 @@ $(".submit").click(function(event){
                 to: "ggarcia@victorvilleca.gov,rramirezdean@victorvilleca.gov",
                 cc: "jcox@victorvilleca.gov,bagomez@victorvilleca.gov,dsjones@victorvilleca.gov",
             },
+//            {
+//                name: "Investigation for the death of Malcolm Harsch",
+//                dateAdded: "Added 06/13/20",
+//                desc: "Demanding accountability for the death of Malcolm Harsch, who was found hanging outside a library in Victorville and has thus far been dismissed as a suicide",
+//                subject: "Justice for Elijah McClain",
+//                body: `Hello,\n\nMy name is ${name} and I am a resident of ${area}. I am demanding accountability for the death of Malcolm Harsch. Local media is pointing towards this likely being a suicide, but given the current political climate, the method of death, and America’s racist history with lynching in hand with Harsch’s positionality as a black man, it seems remarkably more likely that this was a lynching. In addition, it is horribly ignorant for city officials to not have addressed the effect this moment in time is having on the Black Community in white-flight suburbs — like Victorville — in their statements to the press. I can guarantee you this is a race issue at its core. His family has also expressed discomfort in the way this investigation has been conducted thus far, with rightful concern that it is being conducted in a manner that will “avoid further media attention”. Calling this, what appears to very clearly be a lynching, a suicide this early on seems like a coverup. It would be grossly irresponsible to not to have a complete and transparent, public and independent investigation take place. In addition, I demand that we start providing more support towards community efforts and organizations supporting anti-racism work outside of the police forces.\n\nSincerely,\n${name}`,
+//                to: "apdpio@auroragov.org",
+//                cc: "Governorpolis@state.co.us,dyoung@da17.state.co.us,nrodgers@auroragov.org,dafna.michaelson.jenet.house@state.co.us,kevinpriola@gmail.com,mcoffman@auroragov.org,websiteemail@da17.state.co.us,firechief@auroragov.org,cmurillo@auroragov.org,njohnsto@auroragov.org,mberzins@auroragov.org,jmarcano@auroragov.org,acoombs@auroragov.org,fbergan@auroragov.org,cgardner@auroragov.org,dgruber@auroragov.org,sbarkman@auroragov.org,alawson@auroragov.org",
+//            },
+            {
+                name: "Justice for Steven Taylor",
+                dateAdded: "Added 06/25/20",
+                desc: "Citizens of San Leandro are calling for the release of names and firing of the two San Leandro police officers responsible for the murder of Steven Taylor.",
+                subject: "Justice for Steven Taylor",
+                body: `Dear Mayor Cutter and San Leandro City Council Members,\n\nMy name is ${name} and I am a resident of ${area}. I am demanding justice for the murder of Steven Taylor that occurred on April 18 at the hands of two San Leandro police officers.\n\nThe San Leandro City Council voted to request an independent investigation by the state attorney general’s office into Steven’s murder. On Wednesday June 3rd, the San Leandro City Council was supposed to discuss the latest lawsuit at a special closed session. I am requesting more information regarding the status of the lawsuit and the multiple investigations that were discussed on the City Council meeting on June 3rd be made public.\n\nWith that being said, an investigation is not enough. We need the names of the police officers made public and we need those officers who are responsible to be fired and charged. Steven’s murder occurred exactly two months ago, and we have yet to receive the names of his murders.\n\nAt recent meetings, the SL City Council has discussed reducing the budget of the SLPD and putting that money towards other social services. They voted on and approved for $1.7 to be cut from the SLPD department budget and that it be allocated towards other services. This is a mere 4% of the entire police department budget in San Leandro. This is an unacceptable reduction and we are demanding more.\n\nA clear SLPD budget item that should be cut is the one that allows armed officers to patrol San Leandro High School. As SLHS student Rachel Arcadio stated, “They are not there to build relationships. They are there to build a culture of fear.”, a culture of fear that police officers across America perpetuate and instill.\n\nBecause of the $40 million San Leandro police department budget, there is a lack of equitable and accessible public services, like mental health services. Money taken from the police department should be put towards programs and services that people can reach out to for whatever they may be struggling with. If the police department budget was smaller and such programs and services existed, Steven might still be with us today. Unfortunately, we will never know because two, unnamed police officers ended his life rather than helping him, protecting him, and serving him.\n\nThough I am glad to see some progress in the budget re-allocation and investigations into Steven’s murder, it is nowhere near enough and we are far from where we must be.\n\nI hope that you take these demands into consideration. Steven Taylor deserves justice, but more importantly, he deserved to be here with us today. We ask you to work harder to protect the people, not the police.\n\nSincerely,\n${name}`,
+                to: "pcutter@sanleandro.org,dcox@sanleandro.org,ehernandez@sanleandro.org,vaguilar@sanleandro.org,blee@sanleandro.org,clopez@sanleandro.org,pballew@sanleandro.org",
+                cc: "citycouncil@sanleandro.org",
+            },
 
         ]
         
@@ -176,7 +204,7 @@ $(".submit").click(function(event){
         for (var i = 0; i < removals.length; i++) {
             var source = removals[i]
             var newSubject = encodeURIComponent(source["subject"])
-            var newBody = encodeURIComponent(source["body"])
+            var newBody = encodeURIComponent(`${extras}\n\n${source["body"]}`)
             var link = `mailto:${source["to"]}?cc=${source["cc"]}&subject=${newSubject}%20%7C%20${name}&body=${newBody}`
 
             var paragraph = `<div class="col-md-4 mb-5" ><div class="card h-100"><div class="card-body"><h4 class="card-title">${source["name"]}</h4><h6 class="card-subtitle mb-2 text-muted">${source["dateAdded"]}</h6><p class="card-text">${source["desc"]}</p></div><div class="card-footer"><a href="${link}" target="_" class="btn btn-primary">Send Email</a></div></div></div>`
@@ -186,7 +214,7 @@ $(".submit").click(function(event){
         for (var i = 0; i < justice.length; i++) {
             var source = justice[i]
             var newSubject = encodeURIComponent(source["subject"])
-            var newBody = encodeURIComponent(source["body"])
+            var newBody = encodeURIComponent(`${extras}\n\n${source["body"]}`)
             var link = `mailto:${source["to"]}?cc=${source["cc"]}&subject=${newSubject}%20%7C%20${name}&body=${newBody}`
         
             var paragraph = `<div class="col-md-4 mb-5" ><div class="card h-100"><div class="card-body"><h4 class="card-title">${source["name"]}</h4><h6 class="card-subtitle mb-2 text-muted">${source["dateAdded"]}</h6><p class="card-text">${source["desc"]}</p></div><div class="card-footer"><a href="${link}" target="_" class="btn btn-primary">Send Email</a></div></div></div>`
@@ -196,7 +224,7 @@ $(".submit").click(function(event){
         for (var i = 0; i < reps.length; i++) {
             var source = reps[i]
             var newSubject = encodeURIComponent(source["subject"])
-            var newBody = encodeURIComponent(source["body"])
+            var newBody = encodeURIComponent(`${extras}\n\n${source["body"]}`)
             var link = `mailto:${source["to"]}?cc=${source["cc"]}&subject=${newSubject}%20%7C%20${name}&body=${newBody}`
         
             var paragraph = `<div class="col-md-4 mb-5" ><div class="card h-100"><div class="card-body"><h4 class="card-title">${source["name"]}</h4><h6 class="card-subtitle mb-2 text-muted">${source["dateAdded"]}</h6><p class="card-text">${source["desc"]}</p></div><div class="card-footer"><a href="${link}" target="_" class="btn btn-primary">Send Email</a></div></div></div>`
