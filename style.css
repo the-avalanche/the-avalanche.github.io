@@ -68,3 +68,7 @@ h2 {
 .navbar-toggler {
     color: white;
 }
+
+.btn {
+    margin: 5px;
+}
